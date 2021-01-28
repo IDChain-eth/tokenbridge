@@ -7,10 +7,10 @@ const Web3 = require('web3')
 const fs = require('fs')
 
 const {
-  COMMON_HOME_RPC_URL,
-  COMMON_HOME_BRIDGE_ADDRESS,
-  COMMON_FOREIGN_RPC_URL,
-  COMMON_FOREIGN_BRIDGE_ADDRESS
+  REACT_APP_COMMON_HOME_RPC_URL,
+  REACT_APP_COMMON_HOME_BRIDGE_ADDRESS,
+  REACT_APP_COMMON_FOREIGN_RPC_URL,
+  REACT_APP_COMMON_FOREIGN_BRIDGE_ADDRESS
 } = process.env
 
 const generateSnapshot = async (side, url, bridgeAddress) => {
@@ -104,8 +104,8 @@ const generateSnapshot = async (side, url, bridgeAddress) => {
 
 const main = async () => {
   await Promise.all([
-    generateSnapshot('home', COMMON_HOME_RPC_URL, COMMON_HOME_BRIDGE_ADDRESS),
-    generateSnapshot('foreign', COMMON_FOREIGN_RPC_URL, COMMON_FOREIGN_BRIDGE_ADDRESS)
+    generateSnapshot('home', REACT_APP_COMMON_HOME_RPC_URL, REACT_APP_COMMON_HOME_BRIDGE_ADDRESS),
+    generateSnapshot('foreign', REACT_APP_COMMON_FOREIGN_RPC_URL, REACT_APP_COMMON_FOREIGN_BRIDGE_ADDRESS)
   ])
 }
 
